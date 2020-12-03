@@ -14,9 +14,8 @@ import (
 type Policy struct {
 	// Letter to which the policy applies.
 	letter rune
-	// Minimum number of letter occurrences.
+	// Policy parameters with version-dependent interpretation.
 	min int
-	// Maximum number of letter occurrences.
 	max int
 }
 
@@ -25,7 +24,11 @@ type Policy struct {
 type PolicyVersion int
 
 const (
+	// `min` is the minimum number of `letter` occurrences, and `max` is the
+	// maximum number of `letter` occurrences.
 	Part1 PolicyVersion = iota
+	// `letter` must occur at one and only one of index `min` or index `max`.
+	// Indexing is 1-based.
 	Part2
 )
 
