@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	v, err := password.CountValidPasswordsInFile("inputs/day02.txt", password.Part1)
+	v, err := password.CountValidPasswordsInFile("inputs/day02.txt", password.Part2)
 	if err != nil {
 		log.Fatal(err)
 	}
