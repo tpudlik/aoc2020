@@ -28,8 +28,9 @@ type Computer struct {
 }
 
 func (c *Computer) LoadProgram(program []Instruction) {
-	c.program = program
 	c.pc = 0
+	c.acc = 0
+	c.program = program
 }
 
 // Executes the next instruction in the program.  Returns false if program end reached.
